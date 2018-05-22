@@ -26,10 +26,10 @@ after_success:
  - docker build -t $IMAGE_NAME .
  - docker tag $IMAGE_NAME $IMAGE_NAME:$TAG
  - docker push $IMAGE_NAME
- - kubectl run kubernetes-backend --image= https://hub.docker.com/r/bochwafa/backendspringboot:v1 --port=4000
+ - kubectl run kubernetes-backend --image= registry.hub.docker.com/bochwafa/backendspringboot:v1
  - kubectl get deployments
  - kubectl describe pods
- 
+
 
 deploy:
  provider: heroku
